@@ -8,8 +8,8 @@ const { toBase64 } = require('../utils/base64');
 
 // Hack to fix PHONE_REGISTRATION_ERROR #17 when bundled with webpack
 // https://github.com/dcodeIO/protobuf.js#browserify-integration
-protobuf.util.Long = Long
-protobuf.configure()
+protobuf.util.Long = Long;
+protobuf.configure();
 
 const serverKey = toBase64(Buffer.from(fcmKey));
 
@@ -79,11 +79,11 @@ async function postRegister({ androidId, securityToken, body, retry = 0 }) {
     form : body,
   });
   if (response.includes('Error')) {
-    console.warn(`Register request has failed with ${response}`);
+    //console.warn(`Register request has failed with ${response}`);
     if (retry >= 5) {
       throw new Error('GCM register has failed');
     }
-    console.warn(`Retry... ${retry + 1}`);
+    //console.warn(`Retry... ${retry + 1}`);
     await waitFor(1000);
     return postRegister({ androidId, securityToken, body, retry : retry + 1 });
   }
