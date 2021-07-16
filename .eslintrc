@@ -81,7 +81,7 @@
     "vars-on-top": 2,                // http://eslint.org/docs/rules/vars-on-top
     "wrap-iife": [2, "any"],         // http://eslint.org/docs/rules/wrap-iife
     "yoda": 2,                       // http://eslint.org/docs/rules/yoda
-    "no-console": 0,
+    "no-console": 2,
     "no-unused-vars": [2, { "ignoreRestSiblings": true }],
     "key-spacing": [2, {
       "beforeColon": true,
